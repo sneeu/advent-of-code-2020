@@ -1,6 +1,6 @@
 import pytest
 
-from solution import is_valid, parse_line
+from solution import is_valid, is_valid_part2, parse_line
 
 
 @pytest.mark.parametrize(
@@ -31,3 +31,18 @@ def test_is_valid(min, max, letter, password, valid):
 )
 def test_parse_line(line, min, max, letter, password):
     assert parse_line(line) == (min, max, letter, password)
+
+
+@pytest.mark.parametrize(
+    "pos1,pos2,letter,password,valid",
+    [
+        (1, 2, "a", "abcde", True),
+        (1, 1, "a", "abcde", False),
+        (2, 4, "a", "abcde", False),
+        (1, 9, "a", "aaaaabbbbb", True),
+        (3, 6, "a", "aaaaabbbbb", True),
+        (8, 9, "a", "aaaaabbbbb", False),
+    ],
+)
+def test_is_valid_part2(pos1, pos2, letter, password, valid):
+    assert is_valid_part2(pos1, pos2, letter, password) == valid
