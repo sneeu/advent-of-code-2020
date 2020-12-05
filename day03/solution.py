@@ -1,4 +1,5 @@
-
+import functools
+import operator
 
 
 def part1(lines, right, down):
@@ -17,8 +18,16 @@ def part1(lines, right, down):
     return trees_hit
 
 
+def part2(lines, movements):
+    return functools.reduce(
+        operator.__mul__, (part1(lines, *movement) for movement in movements)
+    )
+
+
 if __name__ == "__main__":
     with open("./day03/input.txt") as fh:
         lines = fh.readlines()
+        movements = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
         print(part1(lines, 3, 1))
+        print(part2(lines, movements))
