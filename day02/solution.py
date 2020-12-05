@@ -36,7 +36,7 @@ def part2(password_lines):
 
 
 if __name__ == "__main__":
-    with open("input.txt") as fh:
+    with open("./day02/input.txt") as fh:
         lines = fh.readlines()
 
         print(part1(lines))

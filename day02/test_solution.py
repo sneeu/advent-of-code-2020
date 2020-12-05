@@ -1,6 +1,6 @@
 import pytest
 
-from solution import is_valid, is_valid_part2, parse_line
+from .solution import is_valid, is_valid_part2, parse_line
 
 
 @pytest.mark.parametrize(

@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "day02"
+name = "advent-of-code-2020"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["John Sutherland <john@sneeu.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
