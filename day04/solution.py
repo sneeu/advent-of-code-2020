@@ -80,15 +80,19 @@ def valid_passport2(passport):
     if not valid_passport(passport):
         return False
 
-    return all([
-        validate_range(passport["byr"], 1920, 2002),
-        validate_range(passport["iyr"], 2010, 2020),
-        validate_range(passport["eyr"], 2020, 2030),
-        validate_height(passport["hgt"]),
-        validate_regex(passport["hcl"], r"^#[0-9a-f]{6}$"),
-        validate_in_set(passport["ecl"], set(["amb", "blu", "brn", "gry", "grn", "hzl", "oth"])),
-        validate_regex(passport["pid"], r"^[0-9]{9}$"),
-    ])
+    return all(
+        [
+            validate_range(passport["byr"], 1920, 2002),
+            validate_range(passport["iyr"], 2010, 2020),
+            validate_range(passport["eyr"], 2020, 2030),
+            validate_height(passport["hgt"]),
+            validate_regex(passport["hcl"], r"^#[0-9a-f]{6}$"),
+            validate_in_set(
+                passport["ecl"], set(["amb", "blu", "brn", "gry", "grn", "hzl", "oth"])
+            ),
+            validate_regex(passport["pid"], r"^[0-9]{9}$"),
+        ]
+    )
 
 
 def part2(lines):

@@ -1,6 +1,6 @@
 import pytest
 
-from .solution import part1
+from .solution import navigate
 
 
 SMALL_FOREST = ["..\n", "#.\n"]
@@ -16,5 +16,5 @@ LONG_FOREST = ["..\n", "#.\n", "..\n", "..\n"]
         (LONG_FOREST, 1, 2, 0),
     ],
 )
-def test_part1(forest, right, down, expected):
-    assert part1(forest, right, down) == expected
+def test_navigate(forest, right, down, expected):
+    assert navigate(forest, right, down) == expected
