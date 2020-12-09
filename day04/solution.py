@@ -20,10 +20,10 @@ def parse_line(line):
     return {kv[0]: kv[1] for kv in kv_pairs}
 
 
-def parse_file(file):
+def parse_lines(lines):
     record = {}
 
-    for raw_line in file:
+    for raw_line in lines:
         line = raw_line.strip()
 
         if line == "":
@@ -39,8 +39,8 @@ def valid_passport(passport):
     return len(set(passport.keys()) & REQUIRED_FIELDS) == len(REQUIRED_FIELDS)
 
 
-def part1(fh):
-    return len([1 for passport in parse_file(fh) if valid_passport(passport)])
+def part1(lines):
+    return len([1 for passport in parse_lines(lines) if valid_passport(passport)])
 
 
 def validate_in_set(value, s):
@@ -91,13 +91,5 @@ def valid_passport2(passport):
     ])
 
 
-def part2(fh):
-    return len([1 for passport in parse_file(fh) if valid_passport2(passport)])
-
-
-if __name__ == "__main__":
-    with open("./day04/input.txt") as fh:
-        lines = fh.readlines()
-
-        print(part1(lines))
-        print(part2(lines))
+def part2(lines):
+    return len([1 for passport in parse_lines(lines) if valid_passport2(passport)])

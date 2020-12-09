@@ -9,3 +9,4 @@ Unlikely I’ll finish all of the [Advent of Code][aoc] tasks on the days, or ev
 3. [Day 3](https://github.com/sneeu/advent-of-code-2020/tree/master/day03) also in Python
 4. [Day 4](https://github.com/sneeu/advent-of-code-2020/tree/master/day04) in Python again
 5. [Day 5](https://github.com/sneeu/advent-of-code-2020/tree/master/day04) in Python because it works
+6. [Day 6](https://github.com/sneeu/advent-of-code-2020/tree/master/day04) in Python …

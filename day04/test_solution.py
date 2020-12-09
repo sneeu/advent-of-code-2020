@@ -1,6 +1,6 @@
 import pytest
 
-from .solution import parse_file, parse_line
+from .solution import parse_lines, parse_line
 
 
 @pytest.mark.parametrize(
@@ -31,7 +31,7 @@ iyr:2011 ecl:brn hgt:59in
 """.splitlines(
         True
     )
-    assert list(parse_file(file)) == [
+    assert list(parse_lines(file)) == [
         {
             "byr": "1937",
             "cid": "147",
