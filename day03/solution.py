@@ -2,7 +2,7 @@ import functools
 import operator
 
 
-def part1(lines, right, down):
+def navigate(lines, right, down):
     forest_height = len(lines)
     # Subtract one for the \n
     forest_width = len(lines[0]) - 1
@@ -18,16 +18,20 @@ def part1(lines, right, down):
     return trees_hit
 
 
-def part2(lines, movements):
+def part1(lines):
+    return navigate(lines, 3, 1)
+
+
+def part2(lines):
+    movements = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
     return functools.reduce(
-        operator.__mul__, (part1(lines, *movement) for movement in movements)
+        operator.__mul__, (navigate(lines, *movement) for movement in movements)
     )
 
 
 if __name__ == "__main__":
     with open("./day03/input.txt") as fh:
         lines = fh.readlines()
-        movements = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
-        print(part1(lines, 3, 1))
-        print(part2(lines, movements))
+        print(part1(lines))
+        print(part2(lines))

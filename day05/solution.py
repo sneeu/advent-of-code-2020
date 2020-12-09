@@ -23,11 +23,3 @@ def part2(lines):
 
     # Flight is full, so only 1 missing seat
     return list(set(range(mn, mx + 1)) - seats)[0]
-
-
-if __name__ == "__main__":
-    with open("./day05/input.txt") as fh:
-        lines = fh.readlines()
-
-        print(part1(lines))
-        print(part2(lines))
